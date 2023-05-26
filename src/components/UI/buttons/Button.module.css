@@ -1,0 +1,39 @@
+.btn {
+    width: 120px;
+    padding: 0.8em;
+    cursor: pointer;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+}
+
+.btnAdd {
+    color: #44c0b6; 
+}
+
+.btnAdd:hover {
+    color: #252525;
+    background: #44c0b6;
+}
+
+.btnDel {
+    color: #ee0000;
+}
+
+.btnDel:hover {
+    color: #252525;
+    background: #ee0000;
+}
+
+.btnEdit {
+    color: #fe6a6a;
+}
+
+.btnEdit:hover {
+    color: #252525;
+    background: #fe6a6a;
+}
+
+
+
+
+  

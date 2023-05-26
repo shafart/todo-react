@@ -44,7 +44,7 @@ h1 {
 }
 
 input {
-  width: 40%;
+  width: 59%;
   padding: 0.8em;
 }
 
@@ -52,13 +52,6 @@ input:focus {
   outline: none;
 }
 
-button {
-  width: 120px;
-  padding: 0.8em;
-  cursor: pointer;
-  font-weight: 400;
-  letter-spacing: 0.1rem;
-}
 
 input,
 button {
@@ -71,23 +64,6 @@ button {
   border: 1px solid #828691;
 }
 
-.add-button {
-  color: #44c0b6; 
-}
-
-.add-button:hover {
-  color: #252525;
-  background: #44c0b6;
-}
-
-.delete-button {
-  color: #fe6a6a;
-}
-
-.delete-button:hover {
-  color: #252525;
-  background: #fe6a6a;
-}
 
 ul {
   padding: 0;
@@ -96,7 +72,7 @@ ul {
 }
 
 li {
-  width: 40%;
+  width: 59%;
   padding: 0.85em;
   text-align: left;
   margin-bottom: 0.5rem;
@@ -106,6 +82,10 @@ li {
   letter-spacing: 0.02rem;
   transition: all 0.3s ease-out;
   border-left: 5px solid #cf972e;
+}
+
+li:hover {
+  background: #42403e;
 }
 
 li:last-child {
@@ -119,11 +99,11 @@ li:last-child {
   letter-spacing: 0.1rem;
 }
 
-.checked {
+.checkbox  {
   width: auto;
   appearance: auto;
 }
 
-.crossesText {
+.completed {
   text-decoration: line-through;
 }

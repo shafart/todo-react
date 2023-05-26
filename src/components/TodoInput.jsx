@@ -1,4 +1,6 @@
 import React from 'react';
+import Button from './UI/buttons/Button';
+import styles from './UI/buttons/Button.module.css'; 
 
 const TodoInput = ({todo, addTodo, setTodo}) => {
 
@@ -13,11 +15,11 @@ const TodoInput = ({todo, addTodo, setTodo}) => {
                         setTodo(e.target.value)
                     }}
                 />
-                <button
-                    className='add-button'
+                <Button
+                    className={`${styles.btn} ${styles.btnAdd}`}
                     onClick={addTodo}
                 >Создать
-                </button>
+                </Button>
             </div>
         </div>
     )
