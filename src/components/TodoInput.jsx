@@ -1,8 +1,8 @@
-import React from 'react';
-import Button from './UI/buttons/Button';
-import styles from './UI/buttons/Button.module.css'; 
+import React     from 'react';
+import MyButton from './UI/buttons/MyButton';
+import styles from './UI/buttons/MyButton.module.css';
 
-const TodoInput = ({todo, addTodo, setTodo}) => {
+const TodoInput = ({ todo, addTodo, setTodo}) => {
 
     return (
         <div>
@@ -15,11 +15,13 @@ const TodoInput = ({todo, addTodo, setTodo}) => {
                         setTodo(e.target.value)
                     }}
                 />
-                <Button
+                <MyButton
                     className={`${styles.btn} ${styles.btnAdd}`}
                     onClick={addTodo}
                 >Создать
-                </Button>
+                </MyButton>
+
+
             </div>
         </div>
     )

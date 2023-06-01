@@ -1,5 +1,5 @@
 import React from 'react';
-import '../buttons/Button.module.css'
+import '../buttons/MyButton.module.css'
 
 const Button = ({children, className, ...props}) => {
   return (

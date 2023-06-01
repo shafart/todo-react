@@ -6,7 +6,7 @@
 
 body {
   padding: 50px;
-  color: #f7f7f7;
+  color: #fff;
   min-height: 100vh;
   background:#006666;
   text-rendering: optimizeSpeed;
@@ -72,6 +72,9 @@ ul {
 }
 
 li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 59%;
   padding: 0.85em;
   text-align: left;
@@ -106,4 +109,25 @@ li:last-child {
 
 .completed {
   text-decoration: line-through;
+}
+
+.iconFavorite {
+  cursor: pointer;
+  color: yellow;
+}
+
+.todo-animation {
+  animation: addTodoAnimation 0.3s;
+}
+
+
+@keyframes addTodoAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

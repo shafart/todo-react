@@ -1,29 +1,60 @@
 import React from 'react';
-import Button from './UI/buttons/Button';
-import styles from './UI/buttons/Button.module.css';
+import MyButton from './UI/buttons/MyButton';
+import styles from './UI/buttons/MyButton.module.css';
+import { IoIosStarOutline, IoIosStar } from "react-icons/io";
 
-const TodoItem = ({todo, completed, toggleCheckbox, deleteTodo}) => {
+
+
+const TodoItem = ({ completed, toggleCheckbox, deleteTodo, todo, setFavorite, favorite, isDeleting}) => {
+
+
+    const handleFavorite = () => {
+        setFavorite(!favorite);
+    };
+
     return (
         <>
-            <div className='todo'>
-                <li
-                    contentEditable={true}
-                    className={completed ? 'completed' : ''}
-                >
+            <div className={"todo todo-animation"}>
+                <li>
                     <input
-                        className='checkbox'
-                        type='checkbox'
+                        className="form-check-input"
+                        type="checkbox" id="checkboxNoLabel"
+                        value=""
+                        aria-label="..."
                         checked={completed || false}
                         onChange={toggleCheckbox}
                     />
-                    {todo}
+
+                    <span
+                        className={completed ? 'completed' : ''}
+                        contentEditable={true}
+                        suppressContentEditableWarning={true}
+                    >
+                        {todo}
+                    </span>
+
+                    {!favorite ? (
+                        <IoIosStarOutline
+                            className='iconFavorite'
+                            size="25px"
+                            onClick={handleFavorite}
+                        />
+                    ) : (
+                        <IoIosStar
+                            className='iconFavorite'
+                            size="25px"
+                            onClick={handleFavorite}
+                        />
+                    )}
                 </li>
-                <Button
+
+
+                <MyButton
                     className={`${styles.btn} ${styles.btnDel}`}
                     onClick={deleteTodo}
                 >
                     Удалить
-                </Button>
+                </MyButton>
             </div>
         </>
     )
