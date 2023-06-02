@@ -10,6 +10,7 @@ function App() {
   const [todo, setTodo] = useState("");
   const [favorite, setFavorite] = useState(false)
   const [todoList, setTodoList] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const addTodo = () => {
     if (todo !== "") {
@@ -29,6 +30,10 @@ function App() {
     setTodoList(newTodos);
   };
 
+  const handleSearch = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
 
 
   return (
@@ -40,11 +45,13 @@ function App() {
         setTodo={setTodo}
         favorite={favorite}
         setFavorite={setFavorite}
+        handleSearch={handleSearch}
       />
       <TodoList
         todoList={todoList}
         setTodoList={setTodoList}
         deleteTodo={deleteTodo}
+        searchQuery={searchQuery}
       />
     </div>
   );

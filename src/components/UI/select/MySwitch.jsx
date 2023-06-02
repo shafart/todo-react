@@ -14,7 +14,7 @@ const MySwitch = ({ checked, onChange, disabled }) => {
           onChange={onChange}
           disabled={disabled}
         />
-        <label className="form-check-label" htmlFor="flexSwitchCheckDefault" style={{color:'#33CCCC'}}>
+        <label className="form-check-label" htmlFor="flexSwitchCheckDefault" style={{color:'#33CCCC', margin:'10px'}}>
           Показывать только избранные
         </label>
       </div>
