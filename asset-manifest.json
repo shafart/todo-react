@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/shafart/todo-react.git/static/css/main.7f86a55f.css",
+    "main.js": "/shafart/todo-react.git/static/js/main.3703a64d.js",
+    "index.html": "/shafart/todo-react.git/index.html",
+    "main.7f86a55f.css.map": "/shafart/todo-react.git/static/css/main.7f86a55f.css.map",
+    "main.3703a64d.js.map": "/shafart/todo-react.git/static/js/main.3703a64d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7f86a55f.css",
+    "static/js/main.3703a64d.js"
+  ]
+}
