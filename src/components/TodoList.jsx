@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react';
 import TodoItem from './TodoItem';
 import MySwitch from './UI/select/MySwitch';
+import { TodoContext } from './context/TodoContext';
 
-
-const TodoList = ({ todoList, deleteTodo, setTodoList, searchQuery }) => {
-
+const TodoList = () => {
+    const { todoList, deleteTodo, searchQuery, setTodoList } = useContext(TodoContext);
     const [completedTodo, setCompletedTodo] = useState([]);
     const [showFavorites, setShowFavorites] = useState(false);
 
@@ -15,10 +15,8 @@ const TodoList = ({ todoList, deleteTodo, setTodoList, searchQuery }) => {
     };
 
     const filteredTodoList = showFavorites
-    ? todoList.filter((todo) => todo.favorite && todo.text.includes(searchQuery))
-    : todoList.filter((todo) => todo.text.includes(searchQuery));
-  
-
+        ? todoList.filter((todo) => todo.favorite && todo.text.includes(searchQuery))
+        : todoList.filter((todo) => todo.text.includes(searchQuery));
 
     const toggleCheckbox = (index) => {
         const newCompletedTodo = [...completedTodo];
@@ -26,9 +24,14 @@ const TodoList = ({ todoList, deleteTodo, setTodoList, searchQuery }) => {
         setCompletedTodo(newCompletedTodo);
     };
 
+
+
     const setFavorite = (index) => {
         const newTodoList = [...todoList];
-        newTodoList[index].favorite = !newTodoList[index].favorite;
+        newTodoList[index] = {
+            ...newTodoList[index],
+            favorite: !newTodoList[index].favorite,
+        };
         setTodoList(newTodoList);
     };
 
@@ -37,7 +40,6 @@ const TodoList = ({ todoList, deleteTodo, setTodoList, searchQuery }) => {
         <>
             {todoList?.length > 0 ? (
                 <ul className="todo-wrapper todo-animation">
-
                     <MySwitch
                         checked={showFavorites}
                         onChange={toggleFavorites}
